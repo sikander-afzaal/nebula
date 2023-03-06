@@ -16,4 +16,7 @@
   .cta-btn {
     @apply bg-black text-white text-base font-medium rounded-[15px] h-[46px] px-12 hover:bg-transparent hover:text-black border-2 border-solid border-black transition-all duration-300;
   }
+  .cta-btn-white {
+    @apply bg-gray-400 text-black text-base font-medium rounded-[15px] h-[46px] px-12 hover:bg-transparent  border-2 border-solid border-gray-400 transition-all duration-300;
+  }
 }
