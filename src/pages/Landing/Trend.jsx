@@ -5,33 +5,40 @@ import MarketRow from "../../components/MarketRow";
 
 const Trend = () => {
   return (
-    <div className="wrapper pb-10">
+    <div className="wrapper pb-10 mt-10 lg:mt-0">
       <div className="contain flex-col justify-start items-start">
         {/* //headings ----------- */}
         <div className="flex justify-between items-center w-full">
-          <h2 className="text-black text-[33px] font-medium leading-[1] w-full text-left">
+          <h2 className="sm:p-0 pl-5 text-black text-[26px] sm:text-[33px] font-medium leading-[1] w-full text-left">
             Trending Markets
           </h2>
-          <h2 className="text-black text-[33px] font-medium leading-[1] w-full text-left">
+          <h2 className="text-black xl:block hidden text-[33px] font-medium leading-[1] w-full text-left">
             Explore
           </h2>
         </div>
         {/* //sub headings ------------------------------ */}
-        <div className="flex justify-between px-5 items-center w-full mt-8">
-          <div className="grid w-full grid-cols-[1.5fr__1fr__1fr]">
+        <div className=" justify-between xl:flex hidden px-5 items-center w-full mt-8">
+          <div className="grid  w-full grid-cols-[1.5fr__1fr__1fr]">
             <p className="text-gray-600 text-base font-medium">Collection</p>
             <p className="text-gray-600 text-base font-medium">24HR Volume</p>
             <p className="text-gray-600 text-base font-medium">
               24HR Transactions
             </p>
           </div>
-          <p className="text-gray-600 text-base font-medium w-full text-right">
+          <p className=" text-gray-600 text-base font-medium w-full text-right">
             View More
           </p>
         </div>
         {/* //table --------------------- */}
-        <div className="flex justify-between items-start w-full py-5 pl-4 border border-solid border-[#f1f1f1] rounded-[30px] mt-4">
-          <div className="w-1/2 flex justify-start items-start flex-col gap-8">
+        <div className="flex xl:flex-row xl:gap-0 gap-10 flex-col justify-between items-start w-full py-5 xl:pl-4 px-4 border border-solid border-[#f1f1f1] rounded-[30px] mt-4">
+          <div className="w-full overflow-x-auto  xl:w-1/2 flex justify-start items-start flex-col gap-8">
+            <div className="xl:hidden grid min-w-[640px] sm:min-w-0  w-full grid-cols-[1.5fr__1fr__1fr]">
+              <p className="text-gray-600 text-base font-medium">Collection</p>
+              <p className="text-gray-600 text-base font-medium">24HR Volume</p>
+              <p className="text-gray-600 text-base font-medium">
+                24HR Transactions
+              </p>
+            </div>
             <MarketRow
               img={
                 <svg
@@ -91,73 +98,82 @@ const Trend = () => {
             />
           </div>
 
-          <div className="w-1/2">
-            <Splide
-              options={{
-                width: "100%",
-                autoWidth: "true",
-                arrows: true,
-                pagination: false,
-                gap: "1rem",
-                type: "loop",
-                perMove: 1,
-              }}
-            >
-              <SplideSlide>
-                <div className="w-[200px] h-[160px] rounded-[20px] overflow-hidden">
-                  <img
-                    src="/test-slider.png"
-                    className="w-full grayscale contrast-100 object-contain h-full"
-                    alt=""
-                  />
-                </div>
-              </SplideSlide>
-              <SplideSlide>
-                <div className="w-[200px] h-[160px] rounded-[20px] overflow-hidden">
-                  <img
-                    src="/test-slider.png"
-                    className="w-full grayscale contrast-100 object-contain h-full"
-                    alt=""
-                  />
-                </div>
-              </SplideSlide>
-              <SplideSlide>
-                <div className="w-[200px] h-[160px] rounded-[20px] overflow-hidden">
-                  <img
-                    src="/test-slider.png"
-                    className="w-full grayscale contrast-100 object-contain h-full"
-                    alt=""
-                  />
-                </div>
-              </SplideSlide>
-              <SplideSlide>
-                <div className="w-[200px] h-[160px] rounded-[20px] overflow-hidden">
-                  <img
-                    src="/test-slider.png"
-                    className="w-full grayscale contrast-100 object-contain h-full"
-                    alt=""
-                  />
-                </div>
-              </SplideSlide>
-              <SplideSlide>
-                <div className="w-[200px] h-[160px] rounded-[20px] overflow-hidden">
-                  <img
-                    src="/test-slider.png"
-                    className="w-full grayscale contrast-100 object-contain h-full"
-                    alt=""
-                  />
-                </div>
-              </SplideSlide>
-              <SplideSlide>
-                <div className="w-[200px] h-[160px] rounded-[20px] overflow-hidden">
-                  <img
-                    src="/test-slider.png"
-                    className="w-full grayscale contrast-100 object-contain h-full"
-                    alt=""
-                  />
-                </div>
-              </SplideSlide>
-            </Splide>
+          <div className="flex justify-start items-start flex-col gap-3 w-full xl:w-1/2">
+            <h2 className="text-[26px] sm:text-[33px] xl:hidden block text-black pl-5 font-medium">
+              Explore
+            </h2>
+            <p className="xl:hidden block text-gray-600 text-base font-medium w-full pr-5 text-right">
+              View More
+            </p>
+            <div className="w-full">
+              <Splide
+                options={{
+                  width: "100%",
+                  autoWidth: "true",
+                  arrows: true,
+                  pagination: false,
+                  gap: "1rem",
+                  type: "loop",
+                  perMove: 1,
+                  drag: true,
+                }}
+              >
+                <SplideSlide>
+                  <div className="w-[200px] h-[160px] rounded-[20px] overflow-hidden">
+                    <img
+                      src="/test-slider.png"
+                      className="w-full  object-contain h-full"
+                      alt=""
+                    />
+                  </div>
+                </SplideSlide>
+                <SplideSlide>
+                  <div className="w-[200px] h-[160px] rounded-[20px] overflow-hidden">
+                    <img
+                      src="/test-slider.png"
+                      className="w-full  object-contain h-full"
+                      alt=""
+                    />
+                  </div>
+                </SplideSlide>
+                <SplideSlide>
+                  <div className="w-[200px] h-[160px] rounded-[20px] overflow-hidden">
+                    <img
+                      src="/test-slider.png"
+                      className="w-full  object-contain h-full"
+                      alt=""
+                    />
+                  </div>
+                </SplideSlide>
+                <SplideSlide>
+                  <div className="w-[200px] h-[160px] rounded-[20px] overflow-hidden">
+                    <img
+                      src="/test-slider.png"
+                      className="w-full  object-contain h-full"
+                      alt=""
+                    />
+                  </div>
+                </SplideSlide>
+                <SplideSlide>
+                  <div className="w-[200px] h-[160px] rounded-[20px] overflow-hidden">
+                    <img
+                      src="/test-slider.png"
+                      className="w-full  object-contain h-full"
+                      alt=""
+                    />
+                  </div>
+                </SplideSlide>
+                <SplideSlide>
+                  <div className="w-[200px] h-[160px] rounded-[20px] overflow-hidden">
+                    <img
+                      src="/test-slider.png"
+                      className="w-full  object-contain h-full"
+                      alt=""
+                    />
+                  </div>
+                </SplideSlide>
+              </Splide>
+            </div>
           </div>
         </div>
       </div>
