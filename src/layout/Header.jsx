@@ -7,7 +7,7 @@ const Header = () => {
       {headerToggle && (
         <div
           onClick={() => setHeaderToggle(false)}
-          className="fixed top-0 left-0 w-full h-full bg-black opacity-60 z-[88] cursor-pointer"
+          className="fixed lg:hidden block top-0 left-0 w-full h-full bg-black opacity-60 z-[88] cursor-pointer"
         ></div>
       )}
       <div className="contain justify-between items-center">
@@ -41,6 +41,21 @@ const Header = () => {
               headerToggle ? "right-0" : "-right-[600px]"
             } flex justify-start items-center sm:items-start lg:items-center gap-6 lg:flex-row flex-col lg:static w-full max-w-[450px] h-full lg:w-auto lg:max-w-none lg:h-auto fixed top-0 pt-[6rem] px-[2rem] pb-[2rem] lg:p-0 transition-all duration-1000 z-[89] bg-white lg:bg-transparent`}
           >
+            <svg
+              onClick={() => setHeaderToggle(false)}
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="#9a9a9d"
+              className="w-6 h-6 lg:hidden block absolute top-5 left-5 cursor-pointer"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
             <a
               onClick={() => setHeaderToggle(false)}
               href="#"
@@ -76,39 +91,22 @@ const Header = () => {
           </a>
           <button className="cta-btn">Login</button>
         </div>
-        {headerToggle ? (
-          <svg
-            onClick={() => setHeaderToggle(false)}
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="#9a9a9d"
-            className="w-6 h-6 lg:hidden block relative z-[90] cursor-pointer"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
-        ) : (
-          <svg
-            onClick={() => setHeaderToggle(true)}
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="#9a9a9d"
-            className="w-6 h-6 lg:hidden block relative z-[90] cursor-pointer"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25"
-            />
-          </svg>
-        )}
+
+        <svg
+          onClick={() => setHeaderToggle(true)}
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="#9a9a9d"
+          className="w-6 h-6 lg:hidden block cursor-pointer"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25"
+          />
+        </svg>
       </div>
     </header>
   );
